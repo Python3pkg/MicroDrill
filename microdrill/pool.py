@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*- #
 
-from table import ParquetTable
+from .table import ParquetTable
 
 __all__ = ['ParquetPool']
 

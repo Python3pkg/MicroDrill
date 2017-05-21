@@ -28,7 +28,7 @@ class TestParquetDal(TestCase):
         self.dataframe = OrderedDict([('A', [1]), ('B', [2]), ('C', [3])])
         self.df = pd.DataFrame(self.dataframe)
         self.spark_df = self.dal.context.createDataFrame(self.df,
-                                                         self.dataframe.keys())
+                                                         list(self.dataframe.keys()))
 
         self.spark_df.write.parquet(self.full_path_file)
 
@@ -36,14 +36,14 @@ class TestParquetDal(TestCase):
 
         table = ParquetTable(self.table_name, schema_index_file=self.filename)
         self.dal.set_table(table)
-        self.assertEqual(table.schema(), self.dataframe.keys())
+        self.assertEqual(table.schema(), list(self.dataframe.keys()))
 
     def test_should_get_schema_from_parquet_with_schema_setter(self):
 
         table = ParquetTable(self.table_name)
         table.schema_index_file = self.filename
         self.dal.set_table(table)
-        self.assertEqual(table.schema(), self.dataframe.keys())
+        self.assertEqual(table.schema(), list(self.dataframe.keys()))
 
     @patch('microdrill.dal.parquet.SQLContext.read')
     def test_should_not_connect_twice_on_next_get_schema_from_parquet(self,

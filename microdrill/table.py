@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*- #
-from field import BaseField
+from .field import BaseField
 
 __all__ = ['ParquetTable']
 

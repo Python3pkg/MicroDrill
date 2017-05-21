@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*- #
-from query import BaseQuery
+from .query import BaseQuery
 
 __all__ = ['BaseField']
 

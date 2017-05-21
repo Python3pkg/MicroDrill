@@ -9,7 +9,7 @@ setup(
     description="Simple Apache Drill alternative using PySpark",
     long_description=open('README.rst').read(),
     keywords='apache drill client parquet hbase pyspark',
-    author=u'Globo.com',
+    author='Globo.com',
     author_email='backstage7@corp.globo.com',
     url='https://github.com/globocom/MicroDrill',
     license='Apache',

@@ -16,4 +16,4 @@ if not spark_home:
 sys.path.insert(0, os.path.join(test_dir, spark_home, 'python'))
 sys.path.insert(0, os.path.join(test_dir, spark_home,
                                 'python/lib/py4j-0.9-src.zip'))
-execfile(os.path.join(test_dir, spark_home, 'python/pyspark/shell.py'))
+exec(compile(open(os.path.join(test_dir, spark_home, 'python/pyspark/shell.py')).read(), os.path.join(test_dir, spark_home, 'python/pyspark/shell.py'), 'exec'))

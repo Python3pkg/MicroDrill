@@ -72,7 +72,7 @@ class SQLDAL(BaseDAL):
 
     def _from(self):
         tables = []
-        for query in self._query.values():
+        for query in list(self._query.values()):
             tables += [field.table.name for field in query.fields]
 
         query = BaseQuery("FROM")
